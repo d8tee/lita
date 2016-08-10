@@ -1,0 +1,49 @@
+{
+  "name": "hubot-openshift",
+  "version": "1.0.0",
+  "description": "Hubot on OpenShift",
+  "keywords": [
+    "Hubot",
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "D8T",
+    "email": "d8t@protonmail.com",
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">= 0.8.x",
+    "npm": ">= 1.1.x"
+  },
+  "dependencies": {
+    "dorfbot-rpgdice": "^1.0.24",
+    "hubot": ">= 2.5.1",
+    "hubot-ambush": "0.0.3",
+    "hubot-hipchat": "^2.12.0-6",
+    "hubot-insulter": "^1.0.2",
+    "hubot-insults": "^1.0.1",
+    "hubot-mind-blown": "^1.0.0",
+    "hubot-openshift-restart": "0.0.1",
+    "hubot-reactions-gifs": "^1.0.3",
+    "hubot-roller": "0.0.3",
+    "hubot-scripts": "^2.17.2",
+    "hubot-shortround": "^1.0.4",
+    "hubot-speak": "0.0.16",
+    "hubot-table-flip": "^0.2.0",
+    "hubot-table-unflipper": "0.0.3",
+    "hubot-tell": "*",
+    "hubot-the-game": "^1.1.1",
+    "hubot-trivia-game": "git+https://github.com/yincrash/hubot-trivia-game.git",
+    "hubot-troll": "0.0.1"
+  },
+  "scripts": {
+    "start": "PORT=$OPENSHIFT_NODEJS_PORT BIND_ADDRESS=$OPENSHIFT_NODEJS_IP HEROKU_URL=$OPENSHIFT_APP_DNS REDIS_URL=redis://:$REDIS_PASSWORD@$OPENSHIFT_REDIS_HOST:$OPENSHIFT_REDIS_PORT bin/hubot -n Lita -a hipchat"
+  }
+}
